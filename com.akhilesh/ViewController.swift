@@ -7,11 +7,16 @@
 //
 
 import UIKit
-
+import youtube_ios_player_helper
 class ViewController: UIViewController {
+
+    @IBOutlet var playerView: YTPlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.playerView.load( withVideoId: "ytQ5CYE1VZw", playerVars: ["autoplay":1,"modestbranding":1,"showinfo":0,"rel":0, "origin" : "https://www.example.com"])
+        self.playerView.playVideo()
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,7 +24,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
